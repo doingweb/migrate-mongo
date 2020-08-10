@@ -130,6 +130,14 @@ describe("up", () => {
     sinon.assert.callOrder(firstPendingMigration.up, secondPendingMigration.up);
   });
 
+  describe('with the `upTo` option', () => {
+    it.todo('should only load the specified migrations');
+    it.todo('should upgrade the specified pending migrations in ascending order');
+    it.todo('should yield the list of migration file names that were actually upgraded');
+  });
+
+  it.todo('should be able to upgrade callback based migration that has the `db`, `client`, and `options` args');
+
   it("should be able to upgrade callback based migration that has both the `db` and `client` args", async () => {
     firstPendingMigration = {
       up(theDb, theClient, callback) {
